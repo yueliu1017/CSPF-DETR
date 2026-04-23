@@ -2,44 +2,41 @@
 
 **CSPF-DETR: Channel Select and Patch Fusion for Detection With Transformer**
 
-CSPF-DETR 是一种基于 Transformer 的油气管道焊缝缺陷检测算法，旨在解决工业复杂场景下目标检测中的高计算成本、低对比度及类别不易区分等问题。该算法在多个焊缝缺陷数据集上实现了检测精度与计算资源消耗之间的良好平衡。
+CSPF-DETR is a Transformer-based defect detection algorithm for oil and gas pipeline welds, designed to address challenges such as high computational cost, low contrast, and difficult class discrimination in complex industrial scenarios.
 
 ---
 
-## 📌 项目背景
+## 📌 Background
 
-油气长输管道是国家能源安全的核心基础设施。截至 2024 年底，我国油气长输管道总里程已达 **19.5 万公里**。随着服役时间的增加，焊缝缺陷引发的泄漏风险成为重大安全隐患。传统检测方法（如物理检测与人工目检）效率低、成本高，难以满足精准监测需求。
+Oil and gas pipelines are critical to national energy security, with a total length of 195,000 km in China by the end of 2024. As service time increases, leakage risks caused by weld defects become a major safety hazard. Traditional physical inspection and manual visual inspection are inefficient and costly.
 
-近年来，Detection Transformer（DETR）因其端到端架构和匈牙利匹配机制，避免了基于 CNN 的方法中复杂的锚框预设与后处理。然而，DETR 在自注意力计算成本高、前景背景对比度低、类别不易区分的工业复杂场景下检测效果有限。
-
-为此，我们提出了 **CSPF-DETR**，一种面向焊缝缺陷检测的高效 Transformer 模型。
+Although Detection Transformer (DETR) eliminates the need for complex anchor presets and post-processing, it suffers from high self-attention computational costs and limited performance in low-contrast industrial scenes.
 
 ---
 
-## ✨ 主要创新点
-  
-- **通道剪枝与重构模块**：解耦特征图通道，根据通道重要性权重对冗余通道进行剪枝，在减少计算量和参数量的同时保留关键焊缝缺陷特征。
+## ✨ Key Innovations
 
-- **基于 Patch 的尺度内融合网络**：结合基于 Patch 的注意力机制与多路径卷积特征提取，增强模型对缺陷特征的提取能力，提升复杂工业场景下的检测精度。
+- **Channel Pruning and Reconstruction Module**: Decouples feature map channels and prunes redundant channels based on importance weights, reducing computation and parameters while preserving critical weld defect features.
 
----
-
-## 📊 数据集
-
-本项目共构建了三个焊缝缺陷数据集，包含：Blueweld、Blackweld、Weld512总计2973张图像，3609个缺陷。
+- **Patch-based Intra-scale Fusion Network**: Combines patch-wise attention with multi-path convolutional feature extraction to enhance defect feature representation in complex industrial scenes.
 
 ---
 
-## 🧪 实验与结果
+## 📊 Datasets
 
-我们开展了系统的对比实验、消融实验以及参数影响实验。实验结果表明：
+Three weld defect datasets (Blueweld, Blackweld, and Weld512) were constructed, containing a total of **2,973 images** and **3,609 defects**.
 
-- ✅ CSPF-DETR 在检测精度和计算资源消耗方面均具有显著优势
-- ✅ 实现了 **性能与效率的双重平衡**，适用于实际工程部署
-详细实验结果请参考论文正文。
 ---
 
-## 🛠️ 环境与依赖
+## 🧪 Results
+
+Systematic comparative, ablation, and parameter influence experiments demonstrate that CSPF-DETR achieves significant advantages in both detection accuracy and computational resource consumption, offering a strong balance between performance and efficiency.
+
+Detailed results can be found in the paper.
+
+---
+
+## 🛠️ Requirements
 
 - Python >= 3.8
 - PyTorch >= 1.9
@@ -49,3 +46,8 @@ CSPF-DETR 是一种基于 Transformer 的油气管道焊缝缺陷检测算法，
 - matplotlib
 - tqdm
 
+---
+
+## 📬 Contact
+
+Yue Liu: yueliu1017@163.com
